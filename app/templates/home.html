@@ -1,1 +1,10 @@
-<h1>HOME PAGE</h1>
+<div id='topbar'>
+  <h1>Matt's Bloc Chat</h1>
+</div>
+
+<div id='sidebar'>
+  <ul>
+  <li ng-repeat='rooms in room.room.all track by $index'> {{ rooms["$value"] }} </li>
+  </ul>
+
+</div>
