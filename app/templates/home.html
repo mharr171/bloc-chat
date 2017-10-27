@@ -3,8 +3,10 @@
 </div>
 
 <div id='sidebar'>
+  <button type="button" ng-click="$ctrl.addRoomModal()">Add a room</button>
+
   <ul>
-  <li ng-repeat='rooms in home.room.all track by $index'> {{ rooms["$value"] }} </li>
+  <li ng-repeat='rooms in $ctrl.room.all track by $index'> {{ rooms["$value"] }} </li>
   </ul>
 
 </div>
