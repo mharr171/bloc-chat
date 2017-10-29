@@ -11,7 +11,7 @@
         url: '/',
         controller: 'HomeCtrl as $ctrl',
         templateUrl: '/templates/home.html'
-      })
+      });
   }
 
   angular

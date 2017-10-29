@@ -1,0 +1,8 @@
+<div class='modalPopup'>
+  <h1>Add a new room</h1>
+  <form ng-submit='$ctrl.ok()'>
+    <input type='text' name='submission' ng-model='modal.name' placeholder='Enter new room name'>
+  </form>
+  <button class='btn' type='button' ng-click='modal.ok()'>Create</button>
+  <button class='btn' type='button' ng-click='modal.cancel()'>Cancel</button>
+</div>
