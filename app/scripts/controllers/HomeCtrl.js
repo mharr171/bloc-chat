@@ -1,6 +1,7 @@
 (function() {
-  function HomeCtrl(Room, $uibModal) {
+  function HomeCtrl($scope, Room, $uibModal) {
     this.room = Room;
+    $scope.activeChatTitle = 'select a chatroom to begin';
 
     this.openComponentModal = function() {
       var modalInstance = $uibModal.open({
@@ -12,12 +13,19 @@
         this.room = room;
         Room.add(this.room);
         console.log('New room created')
-      }, function(){console.log('New room cancelled')});
+      }, function() {
+        console.log('New room cancelled')
+      });
     };
+
+    this.chooseChat = function(id, value) {
+      console.log(value + " clicked with id:" + id);
+      $scope.activeChatTitle = value;
+    }
 
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['$scope', 'Room', '$uibModal', HomeCtrl]);
 })();

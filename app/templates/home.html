@@ -4,10 +4,12 @@
     <h1>Matt's Bloc Chat</h1>
   </div>
 
+  <div id='sidebar-title'>
+    <h3>Rooms</h3>
+  </div>
   <div id='sidebar'>
-    <h2>Rooms</h1>
     <ul>
-      <li ng-repeat='rooms in $ctrl.room.all track by $index'> {{ rooms['$value'] }} </li>
+      <li ng-repeat='rooms in $ctrl.room.all track by $index' ng-click='$ctrl.chooseChat(rooms["$id"],rooms["$value"])'> {{ rooms['$value'] }} </li>
     </ul>
   </div>
 
@@ -15,7 +17,10 @@
     <button type='button' class='btn' ng-click='$ctrl.openComponentModal()'>Add a room</button>
   </div>
 
-  <div id='chat'>
+  <div id='chat-title'>
+    <h2>{{ activeChatTitle }}</h2>
+  </div>
+  <div id='chatlog'>
 
     <!-- start temp chat logs -->
 
