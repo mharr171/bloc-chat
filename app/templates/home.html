@@ -9,10 +9,16 @@
     <ul>
       <li ng-repeat='rooms in $ctrl.room.all track by $index'> {{ rooms['$value'] }} </li>
     </ul>
+  </div>
+
+  <div id='addbtn'>
     <button type='button' class='btn' ng-click='$ctrl.openComponentModal()'>Add a room</button>
   </div>
 
   <div id='chat'>
+
+    <!-- start temp chat logs -->
+
     <div class='message odd'>
       <div class='msg-details'>
         <span class='name'>Matthew</span>
@@ -72,7 +78,11 @@
         Pariatur culpa irure est ipsum eiusmod officia et et enim et.
       </div>
     </div>
+    <!-- end temp chat logs -->
+  </div>
 
+  <div id='msg-input'>
+    <input class='input' type='text' name='message' placeholder='Enter your message'>
   </div>
 
 </div>
