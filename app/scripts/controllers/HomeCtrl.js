@@ -1,7 +1,8 @@
 (function() {
-  function HomeCtrl($scope, Room, $uibModal) {
+  function HomeCtrl($scope, Room, Message, $uibModal) {
     this.room = Room;
     $scope.activeChatTitle = 'select a chatroom to begin';
+    $scope.messages = {};
 
     this.openComponentModal = function() {
       var modalInstance = $uibModal.open({
@@ -21,11 +22,15 @@
     this.chooseChat = function(id, value) {
       console.log(value + " clicked with id:" + id);
       $scope.activeChatTitle = value;
+      $scope.messages = Message.getByRoomId(id);
+      console.log(Message);
+      console.log($scope.messages);
+      console.log(JSON.stringify($scope.messages));
     }
 
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$scope', 'Room', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', HomeCtrl]);
 })();

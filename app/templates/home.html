@@ -13,81 +13,32 @@
     </ul>
   </div>
 
-  <div id='addbtn'>
+  <div id='add-btn'>
     <button type='button' class='btn' ng-click='$ctrl.openComponentModal()'>Add a room</button>
   </div>
 
   <div id='chat-title'>
     <h2>{{ activeChatTitle }}</h2>
   </div>
+
   <div id='chatlog'>
 
-    <!-- start temp chat logs -->
-
-    <div class='message odd'>
+    <div ng-repeat="message in messages" class='message' ng-class-odd='"odd"' ng-class-even='"even"'>
       <div class='msg-details'>
-        <span class='name'>Matthew</span>
-        <span class='time'>14:52</span>
+        <span class='name'>{{ message.username }}</span>
+        <span class='time'>{{ message.sentAt }}</span>
       </div>
-      <div class='text'>
-        Minim dolor ullamco enim laboris eiusmod laboris nisi ex laboris et commodo eu mollit tempor proident.
-      </div>
+      <div class='text'>{{ message.content }}</div>
     </div>
 
-    <div class='message even'>
-      <div class='msg-details'>
-        <span class='name'>Francesca</span>
-        <span class='time'>14:52</span>
-      </div>
-      <div class='text'>
-        Duis sunt in consequat voluptate do fugiat et excepteur ipsum cupidatat voluptate id officia culpa sit ad.
-      </div>
-    </div>
-
-    <div class='message odd'>
-      <div class='msg-details'>
-        <span class='name'>Matthew</span>
-        <span class='time'>14:54</span>
-      </div>
-      <div class='text'>
-        Labore nisi cupidatat adipisicing commodo cupidatat voluptate id aliquip voluptate consectetur tempor nisi nulla nisi.
-      </div>
-    </div>
-
-    <div class='message even'>
-      <div class='msg-details'>
-        <span class='name'>Matthew</span>
-        <span class='time'>14:55</span>
-      </div>
-      <div class='text'>
-        Ullamco exercitation occaecat id magna aliquip enim excepteur aute.
-      </div>
-    </div>
-
-    <div class='message odd'>
-      <div class='msg-details'>
-        <span class='name'>Francesca</span>
-        <span class='time'>14:55</span>
-      </div>
-      <div class='text'>
-        Ad non irure consequat excepteur ipsum anim nostrud sit occaecat nisi proident eiusmod duis adipisicing sit Lorem dolore.
-      </div>
-    </div>
-
-    <div class='message even'>
-      <div class='msg-details'>
-        <span class='name'>Matthew</span>
-        <span class='time'>14:56</span>
-      </div>
-      <div class='text'>
-        Pariatur culpa irure est ipsum eiusmod officia et et enim et.
-      </div>
-    </div>
-    <!-- end temp chat logs -->
   </div>
 
   <div id='msg-input'>
     <input class='input' type='text' name='message' placeholder='Enter your message'>
+  </div>
+
+  <div id='submit-btn'>
+    <button type='button' class='btn' ng-click=''>Submit</button>
   </div>
 
 </div>
