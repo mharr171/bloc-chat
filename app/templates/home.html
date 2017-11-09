@@ -34,11 +34,11 @@
   </div>
 
   <div id='msg-input'>
-    <input class='input' type='text' name='message' placeholder='Enter your message'>
+    <input class='input' type='text' name='message'  ng-model='$ctrl.inputMessage' placeholder='Enter your message'>
   </div>
 
   <div id='submit-btn'>
-    <button type='button' class='btn' ng-click=''>Submit</button>
+    <button type='button' class='btn' ng-click='$ctrl.sendMessage()'>Submit</button>
   </div>
 
 </div>

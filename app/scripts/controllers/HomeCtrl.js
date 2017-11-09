@@ -3,6 +3,8 @@
     this.room = Room;
     $scope.activeChatTitle = 'select a chatroom to begin';
     $scope.messages = {};
+    this.activeRoomId = null;
+    this.inputMessage = '';
 
     this.openComponentModal = function() {
       var modalInstance = $uibModal.open({
@@ -21,12 +23,18 @@
 
     this.chooseChat = function(id, value) {
       console.log(value + " clicked with id:" + id);
+      this.activeRoomId = id;
       $scope.activeChatTitle = value;
       $scope.messages = Message.getByRoomId(id);
       console.log(Message);
       console.log($scope.messages);
       console.log(JSON.stringify($scope.messages));
     }
+
+    this.sendMessage = function() {
+      Message.send(this.inputMessage, this.activeRoomId);
+      this.inputMessage = '';
+    };
 
   }
 
