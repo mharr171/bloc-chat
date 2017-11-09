@@ -1,5 +1,5 @@
 (function() {
-  function HomeCtrl($scope, Room, Message, $uibModal) {
+  function HomeCtrl($scope, Room, Message, $uibModal, $cookies) {
     this.room = Room;
     $scope.activeChatTitle = 'select a chatroom to begin';
     $scope.messages = {};
@@ -32,5 +32,5 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', '$cookies', HomeCtrl]);
 })();
