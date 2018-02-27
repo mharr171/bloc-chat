@@ -157,7 +157,16 @@ h1, h2, h3, h4, h5 {
 
 .modal-content {
   padding: 25px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #c8c8c8;
+  border: 1px solid #32ffff;
+}
+
+.modal-content h1 {
+  text-align: center;
+}
+
+.modal-content input {
+  margin: 0 auto;
 }
 
 .modal-content .btn {
